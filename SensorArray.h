@@ -12,20 +12,12 @@ namespace EuclidRobot
 	public:
 
 		const int MICROS_WHITE[6] = {
-		200, 250, 150, 80, 80, 80
+		90, 70, 80, 100, 60, 90
 		};
 		const int MICROS_BLACK[6] =
 		{
-			300, 300, 200, 120, 120, 120
+			500, 600, 800, 850, 480, 750
 		};
-
-		/*const int MICROS_WHITE[6] = {
-			70, 80, 90, 110, 80, 110
-		};
-		const int MICROS_BLACK[6] =
-		{
-			525, 600, 820, 820, 375, 700
-		};*/
 
 		SensorArray(int nSensors, const int pins[]);
 		~SensorArray();
@@ -44,5 +36,7 @@ namespace EuclidRobot
 		float* positionalFactors;
 
 		vector<ReflectanceSensor*> sensors = vector<ReflectanceSensor*>();
+
+		float lastCenter = 0;
 	};
 }

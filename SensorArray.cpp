@@ -13,7 +13,7 @@ namespace EuclidRobot
 		{
 			sensors.push_back(new ReflectanceSensor(pins[i]));
 
-			positionalFactors[i] = 2*i / (nSensors - 1) - 1;
+			positionalFactors[i] = 2.0f*i / (nSensors - 1) - 1;
 		}
 	}
 
@@ -41,7 +41,26 @@ namespace EuclidRobot
 			totalReflectance += reflectances[i];
 		}
 
-		averagePosition /= totalReflectance;
+		if (totalReflectance < MIN_TOTAL_REFLECTANCE)
+		{
+			if (lastCenter < 0)
+			{
+				averagePosition = -1;
+			}
+			else if (lastCenter > 0)
+			{
+				averagePosition = 1;
+			}
+			else
+			{
+				averagePosition = 0;
+			}
+		}
+		else
+		{
+			averagePosition /= totalReflectance;
+			lastCenter = averagePosition;
+		}
 
 		delete[] reflectances;
 
@@ -103,7 +122,7 @@ namespace EuclidRobot
 
 		for (int i = 0; i < nSensors; i++)
 		{
-			microsInputs[i] = microsInputEnds[i] - microsInputStart;
+			microsInputs[i] = microsInputEnds[i] - microsInputStart - 5 * i;
 		}
 
 		delete[] microsInputEnds;
