@@ -1,41 +1,38 @@
 #include "ReflectanceSensor.h"
+#include "SensorArray.h"
 
-using namespace euclidRobot;
+using namespace EuclidRobot;
 
 static const int PIN_LED = 13;
 
 static const int N_SENSORS = 6;
 static const int PIN_SENSORS[N_SENSORS] = { 7, 8, 9, 10, 11, 12 };
-ReflectanceSensor sensors[N_SENSORS] = {
-	ReflectanceSensor(PIN_SENSORS[0]),
-	ReflectanceSensor(PIN_SENSORS[1]),
-	ReflectanceSensor(PIN_SENSORS[2]),
-	ReflectanceSensor(PIN_SENSORS[3]),
-	ReflectanceSensor(PIN_SENSORS[4]),
-	ReflectanceSensor(PIN_SENSORS[5]),
-};
+
+SensorArray sensorArray(6, PIN_SENSORS);
 
 void setup()
 {
 	Serial.begin(57600);
 	pinMode(PIN_LED, OUTPUT);
 	digitalWrite(PIN_LED, HIGH);
-
-	
 }
 
 void loop()
 {
-	unsigned long microsInputStart = micros();
-	sensors[0].setLowInput();
-	while (sensors[0].read())
-	{
-		//Wait
-	}
-	unsigned long microsInputEnd = micros();
-	sensors[0].setHighOutput();
+	float center = sensorArray.readLineCenter();
+	Serial.println(center*100, 3);
 
-	Serial.println(microsInputEnd - microsInputStart);
+	long* microsInput = sensorArray.readMicros();
+
+	for (int i = 0; i < N_SENSORS; i++)
+	{
+		//Serial.print(microsInput[i]);
+		//Serial.print(", ");
+	}
+	Serial.println();
+
+	delete[] microsInput;
+
 
 	delay(200);
 }

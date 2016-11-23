@@ -1,7 +1,6 @@
 #include "ReflectanceSensor.h"
-#include "Arduino.h"
 
-namespace euclidRobot
+namespace EuclidRobot
 {
 	ReflectanceSensor::ReflectanceSensor(int pin) : pin(pin)
 	{

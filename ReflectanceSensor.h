@@ -1,6 +1,8 @@
 #pragma once
 
-namespace euclidRobot
+#include <Arduino.h>
+
+namespace EuclidRobot
 {
 
 	/*
@@ -13,7 +15,7 @@ namespace euclidRobot
 	public:
 
 		//The minimum number of microseconds it takes to properly set the pin HIGH.
-		static const int MICROS_MIN_DELAY = 15;
+		static const int MICROS_MIN_DELAY = 30;
 
 		//Initializes the pin and sets it HIGH.
 		ReflectanceSensor(int pin);
