@@ -27,6 +27,12 @@
 *.out
 *.app
 
+# Arduino Files
+__vm/
+.vs/
+
+# Visual Studio
+
 # =========================
 # Operating System Files
 # =========================
