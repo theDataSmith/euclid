@@ -29,9 +29,10 @@
 
 # Arduino Files
 __vm/
-.vs/
+Debug/
 
 # Visual Studio
+.vs/
 
 # =========================
 # Operating System Files
