@@ -1,3 +1,20 @@
+/*
+--FILE--
+SensorArray.cpp
+
+--AUTHOR--
+Name:		Josh Alan
+GitHub:		theDataSmith
+E-mail:		thedatasmith1@gmail.com
+
+--PROJECT--
+Euclid, the line-following robot.
+GitHub:		github.com/theDataSmith/euclid
+
+--CREATION DATE--
+11 / 22 / 2016
+*/
+
 #include "SensorArray.h"
 #include <vector>
 
@@ -11,14 +28,17 @@ namespace EuclidRobot
 
 		for (int i = 0; i < nSensors; i++)
 		{
+			//Initialize each ReflectanceSensor object.
 			sensors.push_back(new ReflectanceSensor(pins[i]));
 
+			//Give each float a value between -1 and 1, evenly spaced.
 			positionalFactors[i] = 2.0f*i / (nSensors - 1) - 1;
 		}
 	}
 
 	SensorArray::~SensorArray()
 	{
+		//Cleanup!
 		for (int i = 0; i < nSensors; i++)
 		{
 			delete sensors[i];
@@ -30,9 +50,22 @@ namespace EuclidRobot
 
 	float SensorArray::readLineCenter()
 	{
+		/*
+		Get an array of reflectances between 0 and 1.
+		0: Completely white.
+		1: Completely black.
+		*/
 		float* reflectances = readReflectances();
 
+		/*
+		The estimated center of the black line.
+		It's calculated by taking the sum of
+		each measured reflectance, multiplied by its respective positional factor,
+		then dividing by the total reflectance.
+		*/
 		float averagePosition = 0;
+
+		//The sum of the values in the reflectances array.
 		float totalReflectance = 0;
 
 		for (int i = 0; i < nSensors; i++)
@@ -41,6 +74,14 @@ namespace EuclidRobot
 			totalReflectance += reflectances[i];
 		}
 
+		/*
+		If the totalReflectance is less than MIN_TOTAL_REFLECTANCE,
+		then we didn't sense a line. That means the line is either
+		to the far left, or the far right. We can use the most recently
+		found center to determine which one.
+
+		Otherwise, proceed normally, caching the line center.
+		*/
 		if (totalReflectance < MIN_TOTAL_REFLECTANCE)
 		{
 			if (lastCenter < 0)

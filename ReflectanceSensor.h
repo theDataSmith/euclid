@@ -1,3 +1,20 @@
+/*
+--FILE--
+ReflectanceSensor.h
+
+--AUTHOR--
+Name:		Josh Alan
+GitHub:		theDataSmith
+E-mail:		thedatasmith1@gmail.com
+
+--PROJECT--
+Euclid, the line-following robot.
+GitHub:		github.com/theDataSmith/euclid
+
+--CREATION DATE--
+11 / 22 / 2016
+*/
+
 #pragma once
 
 #include <Arduino.h>

@@ -1,3 +1,20 @@
+/*
+--FILE--
+ReflectanceSensor.cpp
+
+--AUTHOR--
+Name:		Josh Alan
+GitHub:		theDataSmith
+E-mail:		thedatasmith1@gmail.com
+
+--PROJECT--
+Euclid, the line-following robot.
+GitHub:		github.com/theDataSmith/euclid
+
+--CREATION DATE--
+11 / 22 / 2016
+*/
+
 #include "ReflectanceSensor.h"
 
 namespace EuclidRobot
@@ -9,8 +26,14 @@ namespace EuclidRobot
 
 	void ReflectanceSensor::setHighOutput()
 	{
+		//Set the pin to OUTPUT HIGH.
 		pinMode(pin, OUTPUT);
 		digitalWrite(pin, HIGH);
+
+		/*
+		Record the time in microseconds so that if we set the pin LOW,
+		we can make sure it's been at least MICROS_MIN_DELAY microseconds.
+		*/
 		if (reading)
 		{
 			reading = false;
