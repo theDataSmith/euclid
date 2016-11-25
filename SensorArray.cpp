@@ -110,6 +110,11 @@ namespace EuclidRobot
 
 	float* SensorArray::readReflectances()
 	{
+		/*
+		This function gets the number to microseconds for each sensor to
+		fall from HIGH to LOW and translates those into reflectance values
+		between 0 and 1. Where 0 is white, and 1 is black.
+		*/
 		long* microsInputs = readMicros();
 		float* reflectances = new float[nSensors];
 
@@ -137,17 +142,39 @@ namespace EuclidRobot
 
 	long* SensorArray::readMicros()
 	{
+		/*
+		The number of sensors that have been read.
+		When this value reaches nSensors, we're done reading.
+		*/
 		float nRead = 0;
+
+		/*
+		The time in microseconds when each sensor falls from HIGH to LOW.
+		*/
 		long* microsInputEnds = new long[nSensors];
+
+		/*
+		The end time for each sensor minus the start time.
+		*/
 		long* microsInputs = new long[nSensors];
 
+		/*
+		The time in microseconds just before we start reading the sensors.
+		*/
 		long microsInputStart = micros();
 
+		/*
+		Set each input LOW.
+		*/
 		for (int i = 0; i < nSensors; i++)
 		{
 			sensors[i]->setLowInput();
 		}
 
+		/*
+		Once a sensor's input falls from HIGH to LOW, we're done reading that sensor.
+		Record the end time, increment nRead, and set the sensor back to HIGH.
+		*/
 		while (nRead < nSensors)
 		{
 			for (int i = 0; i < nSensors; i++)
@@ -161,6 +188,9 @@ namespace EuclidRobot
 			}
 		}
 
+		/*
+		Calculate the time in microseconds for each sensor from the start and end times.
+		*/
 		for (int i = 0; i < nSensors; i++)
 		{
 			microsInputs[i] = microsInputEnds[i] - microsInputStart - 5 * i;
