@@ -47,8 +47,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\projects\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\avr;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\util;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\utils;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\avr;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\tools\avr/../arm/bin/..\arm-none-eabi\include;C:\Users\Joshua\Documents\GitHub\euclid;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\projects\Euclid\__vm\.Euclid.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\projects\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\avr;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\util;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\utils;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\avr;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\tools\avr/../arm/bin/..\arm-none-eabi\include;C:\Users\Joshua\Documents\GitHub\euclid;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\aif2jys0.atj\Micro Platforms\default\debuggers\VM_DBG;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\libraries;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\aif2jys0.atj\Micro Platforms\default\debuggers;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\projects\libraries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>C:\Users\Joshua\Documents\GitHub\euclid\__vm\.euclid.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>__HARDWARE_MK20dx256__;__HARDWARE_MK20DX256__;_VMDEBUG=1;__MK20DX256__;TEENSYDUINO=127;ARDUINO=10607;F_CPU=96000000;ARDUINO_ARCH_AVR;USB_SERIAL;LAYOUT_US_ENGLISH;__cplusplus=201103L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
@@ -59,10 +59,14 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\projects\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\avr;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\util;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\utils;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\avr;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\tools\avr/../arm/bin/..\arm-none-eabi\include;C:\Users\Joshua\Documents\GitHub\euclid;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\libraries;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\aif2jys0.atj\Micro Platforms\default\debuggers;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\projects\libraries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>C:\Users\Joshua\Documents\GitHub\euclid\__vm\.euclid.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>__HARDWARE_MK20dx256__;__HARDWARE_MK20DX256__;__MK20DX256__;TEENSYDUINO=127;ARDUINO=10607;F_CPU=96000000;ARDUINO_ARCH_AVR;USB_SERIAL;LAYOUT_US_ENGLISH;__cplusplus=201103L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -89,7 +93,7 @@
     <ClCompile Include="LED.cpp" />
     <ClCompile Include="ReflectanceSensor.cpp" />
     <ClCompile Include="SensorArray.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Motor.cpp" />
   </ItemGroup>
   <PropertyGroup>
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>

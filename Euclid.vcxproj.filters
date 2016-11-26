@@ -44,7 +44,7 @@
     <ClCompile Include="LED.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="Motor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
