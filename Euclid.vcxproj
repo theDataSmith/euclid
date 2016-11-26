@@ -79,11 +79,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LED.h" />
     <ClInclude Include="ReflectanceSensor.h" />
     <ClInclude Include="SensorArray.h" />
     <ClInclude Include="__vm\.Euclid.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="LED.cpp" />
     <ClCompile Include="ReflectanceSensor.cpp" />
     <ClCompile Include="SensorArray.cpp" />
   </ItemGroup>
