@@ -15,10 +15,12 @@ GitHub:		github.com/theDataSmith/euclid
 11 / 22 / 2016
 */
 
-#include "ReflectanceSensor.h"
+#include "LED.h"
 #include "SensorArray.h"
 
 using namespace EuclidRobot;
+
+
 
 static const int PIN_LED = 13;
 static const int PIN_LED_R = 6;
@@ -27,6 +29,10 @@ static const int PIN_LED_B = 4;
 
 static const int N_SENSORS = 6;
 static const int PIN_SENSORS[N_SENSORS] = { 7, 8, 9, 10, 11, 12 };
+
+
+
+LED led(PIN_LED, PIN_LED_R, PIN_LED_G, PIN_LED_B);
 
 SensorArray sensorArray(6, PIN_SENSORS);
 
@@ -90,7 +96,8 @@ void loop()
 	float center = sensorArray.readLineCenter();
 	center /= 2.0f;
 	center += .5f;
-	setHue((2.0f/3.0f)*center);
+	
+	led.setHSV((2.0f / 3.0f) * center, 1, (sin(millis() / 100.0f) + 2) / 3);
 
 	//float* reflectances = sensorArray.readReflectances();
 	//for (int i = 0; i < N_SENSORS; i++)
