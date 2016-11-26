@@ -85,6 +85,7 @@
   <ItemGroup>
     <ClInclude Include="LED.h" />
     <ClInclude Include="Motor.h" />
+    <ClInclude Include="PIDController.h" />
     <ClInclude Include="ReflectanceSensor.h" />
     <ClInclude Include="SensorArray.h" />
     <ClInclude Include="__vm\.Euclid.vsarduino.h" />
