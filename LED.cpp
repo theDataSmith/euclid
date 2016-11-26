@@ -85,10 +85,17 @@ namespace EuclidRobot
 
 	void LED::setHSV(float h, float s, float v)
 	{
+		/*
+		Three floats between 0-1 that represent the brightness of each color:
+		red, green, and blue.
+		*/
 		float r = 0;
 		float g = 0;
 		float b = 0;
 
+		/*
+		Calculate RGB from the hue.
+		*/
 		h *= 6;
 		int h2 = h;
 		h -= h2;
@@ -121,10 +128,16 @@ namespace EuclidRobot
 			break;
 		}
 
+		/*
+		Introduce possible low saturation.
+		*/
 		r += (1 - s) * (1 - r);
 		g += (1 - s) * (1 - g);
 		b += (1 - s) * (1 - b);
 
+		/*
+		Multiply each float by the value.
+		*/
 		r *= v;
 		g *= v;
 		b *= v;

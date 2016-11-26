@@ -68,7 +68,5 @@ namespace EuclidRobot
 		int pinR;
 		int pinG;
 		int pinB;
-
-		void setLed(int pin, int value);
 	};
 }
