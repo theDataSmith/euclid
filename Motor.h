@@ -9,6 +9,8 @@ namespace EuclidRobot
 	public:
 		Motor(int pinFwd, int pinBwd);
 
+		void setSpeed(float speed);
+
 		void setMode(MotorMode mode);
 
 	private:
