@@ -14,6 +14,8 @@ namespace EuclidRobot
 
 	private:
 
+		float P, I, D;
+
 		double totalError = 0;
 
 		float lastError;
