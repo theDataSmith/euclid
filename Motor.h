@@ -10,6 +10,7 @@ namespace EuclidRobot
 		Motor(int pinFwd, int pinBwd);
 
 		void setSpeed(float speed);
+		void setSpeed(float speed, MotorMode mode);
 
 		void setMode(MotorMode mode);
 
@@ -17,6 +18,6 @@ namespace EuclidRobot
 		int pinFwd;
 		int pinBwd;
 
-		bool coastMode = true;
+		bool brakeMode = false;
 	};
 }
