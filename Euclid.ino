@@ -48,57 +48,30 @@ Motor rightMotor(PIN_MOTOR_RIGHT_FWD, PIN_MOTOR_RIGHT_BWD);
 void setup()
 {
 	Serial.begin(57600);
-	pinMode(PIN_LED, OUTPUT);
-	digitalWrite(PIN_LED, HIGH);
 
-	pinMode(PIN_LED_R, OUTPUT);
-	pinMode(PIN_LED_G, OUTPUT);
-	pinMode(PIN_LED_B, OUTPUT);
+	led.setOn();
+
+	led.setR(true);
+	delay(400);
+	led.setR(false);
+	delay(200);
+
+	led.setR(true);
+	delay(400);
+	led.setR(false);
+	delay(200);
+
+	led.setR(true);
+	delay(400);
+	led.setR(false);
+	delay(200);
+
+	led.setG(true);
+	delay(800);
+	led.setG(false);
+	delay(400);
 }
 
-void setHue(float hue)
-{
-	hue *= 6;
-	int h = int(hue);
-
-	float r = 0;
-	float g = 0;
-	float b = 0;
-
-	hue -= h;
-
-	switch (h)
-	{
-	case 0:
-		r = 1;
-		g = hue;
-		break;
-	case 1:
-		g = 1;
-		r = 1 - hue;
-		break;
-	case 2:
-		g = 1;
-		b = hue;
-		break;
-	case 3:
-		b = 1;
-		g = 1 - hue;
-		break;
-	case 4:
-		b = 1;
-		r = hue;
-		break;
-	case 5:
-		r = 1;
-		b = 1 - hue;
-		break;
-	}
-
-	analogWrite(PIN_LED_R, 255 * r);
-	analogWrite(PIN_LED_G, 255 * g);
-	analogWrite(PIN_LED_B, 255 * b);
-}
 
 void loop()
 {

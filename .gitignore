@@ -30,6 +30,7 @@
 # Arduino Files
 __vm/
 Debug/
+Release/
 
 # Visual Studio
 .vs/
