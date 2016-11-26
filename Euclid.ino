@@ -17,6 +17,7 @@ GitHub:		github.com/theDataSmith/euclid
 
 #include "LED.h"
 #include "SensorArray.h"
+#include "Motor.h"
 
 using namespace EuclidRobot;
 
@@ -30,11 +31,19 @@ static const int PIN_LED_B = 4;
 static const int N_SENSORS = 6;
 static const int PIN_SENSORS[N_SENSORS] = { 7, 8, 9, 10, 11, 12 };
 
+static const int PIN_MOTOR_LEFT_FWD = 23;
+static const int PIN_MOTOR_LEFT_BWD = 22;
+static const int PIN_MOTOR_RIGHT_FWD = 20;
+static const int PIN_MOTOR_RIGHT_BWD = 21;
+
 
 
 LED led(PIN_LED, PIN_LED_R, PIN_LED_G, PIN_LED_B);
 
 SensorArray sensorArray(6, PIN_SENSORS);
+
+Motor leftMotor(PIN_MOTOR_LEFT_FWD, PIN_MOTOR_LEFT_BWD);
+Motor rightMotor(PIN_MOTOR_RIGHT_FWD, PIN_MOTOR_RIGHT_BWD);
 
 void setup()
 {
@@ -98,6 +107,9 @@ void loop()
 	center += .5f;
 	
 	led.setHSV((2.0f / 3.0f) * center, 1, (sin(millis() / 100.0f) + 2) / 3);
+
+	leftMotor.setSpeed(sin(millis() / 300.0f), BRAKE);
+	rightMotor.setSpeed(sin(millis() / 300.0f), BRAKE);
 
 	//float* reflectances = sensorArray.readReflectances();
 	//for (int i = 0; i < N_SENSORS; i++)

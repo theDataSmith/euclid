@@ -47,7 +47,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\projects\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\avr;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\util;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\utils;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\avr;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\tools\avr/../arm/bin/..\arm-none-eabi\include;C:\Users\Joshua\Documents\GitHub\euclid;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\hardware\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\projects\libraries;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\avr;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\util;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\utils;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\teensy\avr\cores\teensy3\avr;C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\arduino-1.6.7\hardware\tools\avr/../arm/bin/..\arm-none-eabi\include;C:\Users\Joshua\Documents\GitHub\euclid;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>C:\Users\Joshua\Desktop\Programs\Portable Programs\Arduino\projects\Euclid\__vm\.Euclid.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>__HARDWARE_MK20dx256__;__HARDWARE_MK20DX256__;_VMDEBUG=1;__MK20DX256__;TEENSYDUINO=127;ARDUINO=10607;F_CPU=96000000;ARDUINO_ARCH_AVR;USB_SERIAL;LAYOUT_US_ENGLISH;__cplusplus=201103L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LED.h" />
+    <ClInclude Include="Motor.h" />
     <ClInclude Include="ReflectanceSensor.h" />
     <ClInclude Include="SensorArray.h" />
     <ClInclude Include="__vm\.Euclid.vsarduino.h" />
@@ -88,6 +89,7 @@
     <ClCompile Include="LED.cpp" />
     <ClCompile Include="ReflectanceSensor.cpp" />
     <ClCompile Include="SensorArray.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <PropertyGroup>
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
