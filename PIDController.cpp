@@ -1,4 +1,5 @@
 #include "PIDController.h"
+#include <Arduino.h>
 
 namespace EuclidRobot
 {
@@ -14,7 +15,7 @@ namespace EuclidRobot
 	float PIDController::getCorrection(float error)
 	{
 		unsigned long microsTime = micros();
-		float deltaTime = (microsTime - microsLastCorrection) / 1000000;
+		float deltaTime = (microsTime - microsLastCorrection) / 1000000.0f;
 		microsLastCorrection = microsTime;
 
 		totalError += error * deltaTime;
@@ -25,6 +26,6 @@ namespace EuclidRobot
 
 		lastError = error;
 
-		return p + i + d;
+		return (p + i + d) / 100;
 	}
 }

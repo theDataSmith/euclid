@@ -48,7 +48,7 @@ namespace EuclidRobot
 		/*
 		If the total reflectance is below this value, the line is not detected.
 		*/
-		const float MIN_TOTAL_REFLECTANCE = 0.1f;
+		const float MIN_TOTAL_REFLECTANCE = 0.2f;
 
 		/*
 		Initializes the positionalFactors and the sensors vector.

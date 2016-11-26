@@ -15,93 +15,20 @@ GitHub:		github.com/theDataSmith/euclid
 11 / 22 / 2016
 */
 
-#include "LED.h"
-#include "SensorArray.h"
-#include "Motor.h"
-
-using namespace EuclidRobot;
-
-
-
-static const int PIN_LED = 13;
-static const int PIN_LED_R = 6;
-static const int PIN_LED_G = 5;
-static const int PIN_LED_B = 4;
-
-static const int N_SENSORS = 6;
-static const int PIN_SENSORS[N_SENSORS] = { 7, 8, 9, 10, 11, 12 };
-
-static const int PIN_MOTOR_LEFT_FWD = 23;
-static const int PIN_MOTOR_LEFT_BWD = 22;
-static const int PIN_MOTOR_RIGHT_FWD = 20;
-static const int PIN_MOTOR_RIGHT_BWD = 21;
-
-
-
-LED led(PIN_LED, PIN_LED_R, PIN_LED_G, PIN_LED_B);
-
-SensorArray sensorArray(6, PIN_SENSORS);
-
-Motor leftMotor(PIN_MOTOR_LEFT_FWD, PIN_MOTOR_LEFT_BWD);
-Motor rightMotor(PIN_MOTOR_RIGHT_FWD, PIN_MOTOR_RIGHT_BWD);
+#include "Robot.h"
 
 void setup()
 {
 	Serial.begin(57600);
 
-	led.setOn();
+	EuclidRobot::Robot robot;
 
-	led.setR(true);
-	delay(400);
-	led.setR(false);
-	delay(200);
-
-	led.setR(true);
-	delay(400);
-	led.setR(false);
-	delay(200);
-
-	led.setR(true);
-	delay(400);
-	led.setR(false);
-	delay(200);
-
-	led.setG(true);
-	delay(800);
-	led.setG(false);
-	delay(400);
+	robot.countDown();
+	robot.followLine();
 }
 
 
 void loop()
 {
-	float center = sensorArray.readLineCenter();
-	center /= 2.0f;
-	center += .5f;
-	
-	led.setHSV((2.0f / 3.0f) * center, 1, (sin(millis() / 100.0f) + 2) / 3);
 
-	leftMotor.setSpeed(sin(millis() / 300.0f), BRAKE);
-	rightMotor.setSpeed(sin(millis() / 300.0f), BRAKE);
-
-	//float* reflectances = sensorArray.readReflectances();
-	//for (int i = 0; i < N_SENSORS; i++)
-	//{
-	//	Serial.print(100*reflectances[i], 0);
-	//	Serial.print(", ");
-	//}
-	//Serial.println();
-	//delete[] reflectances;
-
-	//long* microsInput = sensorArray.readMicros();
-	//for (int i = 0; i < N_SENSORS; i++)
-	//{
-	//	Serial.print(microsInput[i]);
-	//	Serial.print(", ");
-	//}
-	//Serial.println();
-	//delete[] microsInput;
-
-
-	delay(20);
 }
