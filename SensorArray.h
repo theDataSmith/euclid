@@ -79,7 +79,7 @@ namespace EuclidRobot
 
 		/*
 		Returns an array of longs.
-		Each one represents the number of microseconds it takes for that sensor to go from HIGH to LOW.
+		Each one represents the number of microseconds it took for that sensor to go from HIGH to LOW.
 		*/
 		long* readMicros();
 

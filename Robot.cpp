@@ -59,11 +59,11 @@ namespace EuclidRobot
 	void Robot::followLine()
 	{
 		//Set the mode of the motors.
-		leftMotor.setMode(BRAKE);
-		rightMotor.setMode(BRAKE);
+		leftMotor.setMode(COAST);
+		rightMotor.setMode(COAST);
 
 		//Initialize the PID Controller.
-		PIDController controller(200, 0, 10);
+		PIDController controller(130, 0, 2);
 		controller.start(0);
 
 		//Infinite loop.
