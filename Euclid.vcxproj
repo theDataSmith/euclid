@@ -87,12 +87,15 @@
     <ClInclude Include="Motor.h" />
     <ClInclude Include="PIDController.h" />
     <ClInclude Include="ReflectanceSensor.h" />
+    <ClInclude Include="Robot.h" />
     <ClInclude Include="SensorArray.h" />
     <ClInclude Include="__vm\.Euclid.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LED.cpp" />
+    <ClCompile Include="PIDController.cpp" />
     <ClCompile Include="ReflectanceSensor.cpp" />
+    <ClCompile Include="Robot.cpp" />
     <ClCompile Include="SensorArray.cpp" />
     <ClCompile Include="Motor.cpp" />
   </ItemGroup>
