@@ -63,7 +63,7 @@ namespace EuclidRobot
 		rightMotor.setMode(COAST);
 
 		//Initialize the PID Controller.
-		PIDController controller(130, 0, 2);
+		PIDController controller(130, 0, 1.5f);
 		controller.start(0);
 
 		//Infinite loop.
